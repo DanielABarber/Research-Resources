@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bibliography — Daniel A. Barber</title>
+<meta name="description" content="A shared collection of texts on architecture, climate, comfort, and sufficiency.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2EAC8;
+    --paper-deep: #E6D89D;
+    --ink: #22262B;
+    --ink-soft: #565B57;
+    --dark: #1C2420;
+    --dark-text: #E6E2D6;
+    --dark-dim: #8B9089;
+    --teal: #3E6B5E;
+    --rust: #9C5A34;
+    --rule: #B7B0A0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    background:
+      linear-gradient(135deg, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0) 30%, rgba(255,255,255,0) 65%, rgba(255,255,255,0.12) 100%),
+      var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, system-ui, sans-serif;
+    line-height: 1.6;
+    font-size: 17px;
+  }
+
+  a { color: var(--ink); text-decoration: underline dotted; text-decoration-color: var(--ink); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--teal); text-decoration-style: solid; text-decoration-color: var(--teal); }
+  a:focus-visible { outline: 2px solid var(--rust); outline-offset: 3px; }
+
+  h1, h2, h3 { font-family: 'Inter', sans-serif; letter-spacing: -0.01em; }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+    color: var(--rust);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  /* ---------- Header (no hero video — simpler than the main site) ---------- */
+  .site-header {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem 1.5rem;
+  }
+  .site-header h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; margin-bottom: 0.6rem; }
+  .site-header .dek { color: var(--ink-soft); font-size: 1rem; max-width: 640px; margin-bottom: 1.5rem; }
+
+  .cat-nav { display: flex; flex-wrap: wrap; gap: 0.4rem 1.5rem; font-size: 0.85rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); }
+  .cat-nav a { text-decoration: none; color: var(--ink-soft); }
+  .cat-nav a:hover { color: var(--teal); }
+
+  .search-box { margin-top: 1rem; }
+  .search-box input {
+    width: 100%;
+    max-width: 420px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--ink);
+    background: var(--paper-deep);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.55rem 0.8rem;
+  }
+  .search-box input::placeholder { color: var(--ink-soft); }
+  .search-box input:focus-visible { outline: 2px solid var(--rust); outline-offset: 1px; }
+  .no-results { display: none; color: var(--ink-soft); font-style: italic; font-size: 0.9rem; padding: 1rem 0; }
+
+  .draft-note {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .draft-note .inner {
+    border-left: 2px dashed var(--rule);
+    padding: 0.6rem 0 0.6rem 1rem;
+    margin-bottom: 1rem;
+  }
+  .draft-note-label {
+    font-weight: 600;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--rust);
+  }
+  .draft-note p {
+    margin-top: 0.3rem;
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Main layout ---------- */
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 2.5rem;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0.5rem 1.5rem 3rem;
+    align-items: start;
+  }
+  main { max-width: none; margin: 0; padding: 0; }
+
+  section { padding: 1.4rem 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+  section h2 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.6rem; }
+
+  .placeholder {
+    color: var(--ink-soft);
+    font-style: italic;
+    font-size: 0.9rem;
+    border-left: 2px dashed var(--rule);
+    padding-left: 1rem;
+  }
+
+  .entry { padding: 0.35rem 0; font-size: 0.92rem; line-height: 1.55; }
+  .entry .author { font-weight: 400; }
+  .entry a.entry-title { font-weight: 700; text-decoration: underline dashed; text-decoration-color: var(--ink); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .entry a.entry-title:hover { color: var(--teal); text-decoration-color: var(--teal); }
+  .entry .venue { font-weight: 400; }
+
+  .type-label {
+    font-weight: 600;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 1.1rem 0 0.4rem;
+  }
+  .type-label:first-child { margin-top: 0.3rem; }
+
+  /* ---------- Covers rail ---------- */
+  .image-col { display: flex; flex-direction: column; gap: 1.25rem; padding-top: 0.5rem; }
+  .image-col figure { margin: 0; }
+  .image-col img { width: 100%; display: block; border-radius: 2px; }
+  .cover-placeholder {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border: 1px dashed var(--rule);
+    border-radius: 2px;
+    background: var(--paper-deep);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink-soft);
+    font-size: 0.78rem;
+    font-style: italic;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  .image-col figcaption { margin-top: 0.4rem; font-size: 0.75rem; color: var(--ink-soft); }
+
+  footer {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 1.5rem 1.5rem 3rem;
+    font-size: 0.72rem;
+    color: var(--ink-soft);
+  }
+
+  @media (max-width: 900px) {
+    .content-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .image-col { flex-direction: row; flex-wrap: wrap; padding-top: 0; }
+    .image-col figure { flex: 0 1 140px; }
+  }
+
+  @media (max-width: 700px) {
+    .site-header, .draft-note, .content-grid, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+    section { padding: 1.25rem 0; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="site-header">
+    <span class="eyebrow">Resource Repository</span>
+    <h1>Bibliography</h1>
+    <p class="dek">A shared collection of texts on architecture, climate, comfort, and sufficiency — for students and collaborators.</p>
+    <nav class="cat-nav" aria-label="Categories">
+      <a href="#sufficiency-policy">Sufficiency Policy</a>
+      <a href="#practice">Practice</a>
+      <a href="#thermal-comfort">Thermal Comfort</a>
+    </nav>
+    <div class="search-box">
+      <input type="search" id="bib-search" placeholder="Search by author, title, or venue…" aria-label="Search bibliography">
+    </div>
+  </header>
+
+  <div class="draft-note">
+    <div class="inner">
+      <span class="draft-note-label">In progress</span>
+      <p>First three categories are populated with real entries below. More categories (Thermal Comfort, Climate Theory, and others) are being added next.</p>
+    </div>
+  </div>
+
+  <div class="content-grid">
+    <main>
+      <section id="sufficiency-policy">
+        <h2>Sufficiency Policy</h2>
+
+        <div class="entry"><span class="author">Creutzig, Felix, Leila Niamir, et al.</span> <a class="entry-title" href="https://drive.google.com/file/d/1dRo5ulp_dHogINqVXArS_sCZg3KuBLko/view" target="_blank" rel="noopener">"Demand-Side Solutions to Climate Change Mitigation Consistent with High Levels of Well-Being."</a> <span class="venue"><em>Nature Climate Change</em>, 2021.</span></div>
+        <div class="entry"><span class="author">Jungell-Michelsson, Jessica, and Pasi Heikkurinen.</span> <a class="entry-title" href="https://drive.google.com/file/d/1bakw3U8d8U_q_26Rx6lNaKWINBUq5Rnb/view" target="_blank" rel="noopener">"Sufficiency: A Systematic Literature Review."</a> <span class="venue"><em>Ecological Economics</em>, 2022.</span></div>
+        <div class="entry"><span class="author">Latour, Bruno, and Timothy M. Lenton.</span> <a class="entry-title" href="https://drive.google.com/file/d/1dnme5RX65qLJj506ANojbedfzWU3bXRR/view" target="_blank" rel="noopener">"Extending the Domain of Freedom, or Why Gaia Is So Hard to Understand."</a> <span class="venue"><em>Critical Inquiry</em>, 2019.</span></div>
+        <div class="entry"><span class="author">Ness, David.</span> <a class="entry-title" href="https://drive.google.com/file/d/1iV_3CacszRcGxVekiz06FbbQVgcl6gbR/view" target="_blank" rel="noopener">"Towards Sufficiency and Solidarity: COP27 Implications for Construction and Property."</a> <span class="venue"><em>Buildings &amp; Cities</em>, 2022.</span></div>
+        <div class="entry"><span class="author">Ness, David Angus.</span> <a class="entry-title" href="https://drive.google.com/file/d/1UQ2kPxgsHBa2suiW5xypih9MMAj40sto/view" target="_blank" rel="noopener">"Technological Efficiency Limitations to Climate Mitigation: Why Sufficiency Is Necessary."</a> <span class="venue"><em>Buildings &amp; Cities</em>, 2023.</span></div>
+
+        <div class="type-label">Topical</div>
+        <div class="entry"><span class="author">Saheb, Yamina.</span> <a class="entry-title" href="https://drive.google.com/file/d/1viTGpKcKMSlE0Rw9Pm9MpMNKGINbPy_5/view" target="_blank" rel="noopener">"COP26: Sufficiency Should Be First."</a> <span class="venue"><em>Buildings &amp; Cities</em>, Commentary, 2021.</span></div>
+
+        <div class="type-label">Blogs</div>
+        <div class="entry"><a class="entry-title" href="https://drive.google.com/file/d/12qU-QQodvNDxyn_EGCNd40dUsiZYAwo2/view" target="_blank" rel="noopener">"Net Zero Has Failed. We Need a Universal Carbon Standard for Buildings."</a> <span class="venue"><em>BuildingGreen</em>, op-ed series, part one.</span></div>
+      </section>
+
+      <section id="practice">
+        <h2>Practice</h2>
+
+        <div class="entry"><span class="author">Ahmed, Sara.</span> <a class="entry-title" href="https://drive.google.com/file/d/1xUpRzRKSfdalO7NIRoay5m1GkMfzyhxR/view" target="_blank" rel="noopener"><em>What's the Use? On the Uses of Use</em>.</a> <span class="venue">Duke University Press, 2019.</span></div>
+        <div class="entry"><span class="author">Bourdieu, Pierre.</span> <a class="entry-title" href="https://drive.google.com/file/d/11YbNXJ9ckwkDcviFREaHOZHnOKDDn2rb/view" target="_blank" rel="noopener"><em>Outline of a Theory of Practice</em>.</a> <span class="venue">Cambridge University Press, 1977.</span></div>
+        <div class="entry"><span class="author">Bourdieu, Pierre.</span> <a class="entry-title" href="https://drive.google.com/file/d/14aUBHBaVoquIKNDPhdIpufwgJx3tLz7j/view" target="_blank" rel="noopener"><em>The Logic of Practice</em>.</a> <span class="venue">Polity Press, 1990.</span></div>
+        <div class="entry"><span class="author">Ravaisson, Félix.</span> <a class="entry-title" href="https://drive.google.com/file/d/1EMrcvi6FNR_2MoqAon8ITXsmlqyyLfru/view" target="_blank" rel="noopener"><em>Of Habit</em>.</a> <span class="venue">Translated by Clare Carlisle and Mark Sinclair. Bloomsbury, 2008.</span></div>
+        <div class="entry"><span class="author">Ahmed, Sara.</span> <a class="entry-title" href="https://drive.google.com/file/d/11vFj1Tgfod0O5XZXRNcOEu2biUopngwK/view" target="_blank" rel="noopener">"Affective Economies."</a> <span class="venue"><em>Social Text</em> 22, no. 2, 2004.</span></div>
+        <div class="entry"><span class="author">Bowles, Louisa, Jake Attwood-Harris, et al.</span> <a class="entry-title" href="https://drive.google.com/file/d/1jKpx9yzWqTn0MrufjM3Mji58fA7w1wEn/view" target="_blank" rel="noopener">"The Hawkins\Brown Emission Reduction Tool."</a> <span class="venue"><em>The Journal of Architecture</em>, 2021.</span></div>
+        <div class="entry"><span class="author">Carlisle, Clare.</span> <a class="entry-title" href="https://drive.google.com/file/d/1XnAjadqfyLVTug9fUre945Dzv6zos-PF/view" target="_blank" rel="noopener">"Between Freedom and Necessity: Félix Ravaisson on Habit and the Moral Life."</a> <span class="venue"><em>Inquiry</em>, 2010.</span></div>
+        <div class="entry"><span class="author">Isaksson, Charlotta, and Kajsa Ellegård.</span> <a class="entry-title" href="https://drive.google.com/file/d/1SOPGk8S1dg_etgYlY_5Qrnz9lAAOU9DD/view" target="_blank" rel="noopener">"Anchoring Energy Efficiency Information in Households' Everyday Projects."</a> <span class="venue"><em>Energy Efficiency</em>, 2015.</span></div>
+        <div class="entry"><span class="author">Madsen, Line Valdorff.</span> <a class="entry-title" href="https://drive.google.com/file/d/1z3hxRJ2FVvM6YkgMfsuDxrLcEnldhMCb/view" target="_blank" rel="noopener">"Materialities Shape Practices and Notions of Comfort in Everyday Life."</a> <span class="venue"><em>Building Research &amp; Information</em>, 2018.</span></div>
+        <div class="entry"><span class="author">Shove, Elizabeth.</span> <a class="entry-title" href="https://drive.google.com/file/d/1K_kB3mdwVahs6ePASmO6PIV4B_bmBYDK/view" target="_blank" rel="noopener">"Sustainability, System Innovation and the Laundry."</a> <span class="venue">In <em>System Innovation for Sustainability</em>, edited by Boelie Elzen, Frank W. Geels, and Kenneth Green. Edward Elgar, 2004.</span></div>
+        <div class="entry"><span class="author">Shove, Elizabeth, Matt Watson, and Nicola Spurling.</span> <a class="entry-title" href="https://drive.google.com/file/d/1Q-w-9w83MBPSfwtOksEiOsezjYYzfvrw/view" target="_blank" rel="noopener">"Conceptualizing Connections: Energy Demand, Infrastructures and Social Practices."</a> <span class="venue"><em>European Journal of Social Theory</em>, 2015.</span></div>
+        <div class="entry"><span class="author">Warde, Alan.</span> <a class="entry-title" href="https://drive.google.com/file/d/1f5ID_BKOf2uVK77nhfgbrEiH99WuDNVK/view" target="_blank" rel="noopener">"Consumption and Theories of Practice."</a> <span class="venue"><em>Journal of Consumer Culture</em>, 2005.</span></div>
+        <div class="entry"><span class="author">Warde, Alan.</span> <a class="entry-title" href="https://drive.google.com/file/d/1g10Q74S9fdCqY0_4955RSYhduYZMLBHz/view" target="_blank" rel="noopener">"What Sort of a Practice Is Eating?"</a> <span class="venue">In <em>Sustainable Practices: Social Theory and Climate Change</em>, edited by Elizabeth Shove and Nicola Spurling. Routledge, 2013.</span></div>
+      </section>
+
+      <section id="thermal-comfort">
+        <h2>Thermal Comfort</h2>
+
+        <div class="entry"><span class="author">Anderson, Warwick.</span> <a class="entry-title" href="https://drive.google.com/file/d/1X7yWDSS60I8I4_eGnbB1SC-fTr8teQb8/view" target="_blank" rel="noopener">"Decolonizing the Foundation of Tropical Architecture."</a> <span class="venue"><em>ABE Journal</em>, 2021.</span></div>
+        <div class="entry"><span class="author">Beal, Justin.</span> <a class="entry-title" href="https://drive.google.com/file/d/1OpGnuMm2CUaaAezedZ5hhk2GKPKat4KQ/view" target="_blank" rel="noopener"><em>Sandfuture</em>.</a> <span class="venue">MIT Press, 2021.</span></div>
+        <div class="entry"><span class="author">Belke, Ansgar, Frauke Dobnik, and Christian Dreger.</span> <a class="entry-title" href="https://drive.google.com/file/d/1LqW8xJ3cXrCdgTs2GLzGAmFmnDYxOIQM/view" target="_blank" rel="noopener">"Energy Consumption and Economic Growth: New Insights into the Cointegration Relationship."</a> <span class="venue"><em>Energy Economics</em>, 2011.</span></div>
+        <div class="entry"><span class="author">Brink, Ebba, Ana Maria Vargas Falla, and Emily Boyd.</span> <a class="entry-title" href="https://drive.google.com/file/d/1N4ok87QqOVhxphwehDC0MQYpWdvHsuqn/view" target="_blank" rel="noopener">"Weapons of the Vulnerable? A Review of Popular Resistance to Climate Adaptation."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">Calder, Barnabas.</span> <a class="entry-title" href="https://drive.google.com/file/d/1hSHNeUoH6AMNHdc2YS_FW8NlHFeVTn50/view" target="_blank" rel="noopener"><em>Architecture: From Prehistory to Climate Emergency</em>.</a> <span class="venue">Pelican, 2021.</span></div>
+        <div class="entry"><span class="author">Cass, Noel, and Elizabeth Shove.</span> <a class="entry-title" href="https://drive.google.com/file/d/16WmYXUHA_pLYNQvknlyBm813ga87Mq0K/view" target="_blank" rel="noopener">"Standards? Whose Standards?"</a> <span class="venue"><em>Architectural Science Review</em>, 2018.</span></div>
+        <div class="entry"><span class="author">Chakrabarty, Dipesh.</span> <a class="entry-title" href="https://drive.google.com/file/d/1OW4ppkunDDiA2uw3D4xDOMEhTQVRe4XV/view" target="_blank" rel="noopener">"World-Making, 'Mass' Poverty, and the Problem of Scale."</a> <span class="venue"><em>e-flux Journal</em>, no. 114, 2020.</span></div>
+        <div class="entry"><span class="author">Chappells, Heather, and Elizabeth Shove.</span> <a class="entry-title" href="https://drive.google.com/file/d/1Ar3xq4Q6-AJjXs7vw_6vbddqoyowcNi9/view" target="_blank" rel="noopener">"Debating the Future of Comfort: Environmental Sustainability, Energy Consumption and the Indoor Environment."</a> <span class="venue"><em>Building Research &amp; Information</em>.</span></div>
+        <div class="entry"><span class="author">Colomina, Beatriz.</span> <a class="entry-title" href="https://drive.google.com/file/d/1D6hVcccWKKzo9KRzhCxjC-PPcz6nkNdG/view" target="_blank" rel="noopener"><em>X-Ray Architecture</em>.</a> <span class="venue">Lars Müller Publishers, 2019.</span></div>
+        <div class="entry"><span class="author">Crowley, John E.</span> <a class="entry-title" href="https://drive.google.com/file/d/1-Lt7P-HBwqTs8AolZ5_aW_WJW02Ex41I/view" target="_blank" rel="noopener"><em>The Invention of Comfort: Sensibilities and Design in Early Modern Britain and Early America</em>.</a> <span class="venue">Johns Hopkins University Press, 2000.</span></div>
+        <div class="entry"><span class="author">Crowley, John E.</span> <a class="entry-title" href="https://drive.google.com/file/d/1OZdQzdgiWf4LizBTxK7Yr2zR8ig2ukbv/view" target="_blank" rel="noopener">"The Sensibility of Comfort."</a> <span class="venue"><em>American Historical Review</em>, 1999.</span></div>
+        <div class="entry"><span class="author">Cruse, Andrew.</span> <a class="entry-title" href="https://drive.google.com/file/d/1XTLWxoV2c40W9lO4c2XXxv5hGTfVYjpo/view" target="_blank" rel="noopener">"Design with Comfort."</a> <span class="venue">Conference paper, 2019.</span></div>
+        <div class="entry"><span class="author">Cruse, Andrew.</span> <a class="entry-title" href="https://drive.google.com/file/d/1aMDWhv1FsBnMPOF3_JGzqNKFwWzeuML_/view" target="_blank" rel="noopener">"Improving the Weather: On Architectural Comforts and Climates."</a> <span class="venue">Essay.</span></div>
+        <div class="entry"><span class="author">Davis, Mike.</span> <a class="entry-title" href="https://drive.google.com/file/d/15LRdfERfCv9D5gxhI6nCy7oJp0DLUYyK/view" target="_blank" rel="noopener">"The Radical Politics of Shade."</a> <span class="venue"><em>Capitalism Nature Socialism</em>, 1997.</span></div>
+        <div class="entry"><span class="author">Day, and Gunderson.</span> <a class="entry-title" href="https://drive.google.com/file/d/1Qhvn8GCcH9lsyo_m5vDh9oLxqAKGbBuR/view" target="_blank" rel="noopener">"Understanding High Performance Buildings: The Link Between Occupant Knowledge of Passive Design Systems, Corresponding Behaviors."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">de Dear, Richard J., and Gail S. Brager.</span> <a class="entry-title" href="https://drive.google.com/file/d/1w2DhyXFZ5HXzOP_FndP7lNqM3DDOXJiG/view" target="_blank" rel="noopener">"Thermal Comfort in Naturally Ventilated Buildings: Revisions to ASHRAE Standard 55."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">Diamanti, Jeff.</span> <a class="entry-title" href="https://drive.google.com/file/d/12-FNGOEr6VY5SKVT9y5_qhW6Gm8HX5ad/view" target="_blank" rel="noopener"><em>Climate and Capital in the Age of Petroleum: Locating Terminal Landscapes</em>.</a> <span class="venue">Bloomsbury Academic, 2021.</span></div>
+        <div class="entry"><span class="author">Escobar, Arturo.</span> <a class="entry-title" href="https://drive.google.com/file/d/1gs9I_F4U50QXQtomiX2_DqtWopp5n9Da/view" target="_blank" rel="noopener">"Degrowth, Postdevelopment, and Transitions: A Preliminary Conversation."</a> <span class="venue">Journal article, review essay.</span></div>
+        <div class="entry"><span class="author">Escobar, Arturo.</span> <a class="entry-title" href="https://drive.google.com/file/d/1wkQdGTWBnsMFmYS7q3fwXqMdb_H822rq/view" target="_blank" rel="noopener"><em>Pluriversal Politics: The Real and the Possible</em>.</a> <span class="venue">Duke University Press, 2020.</span></div>
+        <div class="entry"><span class="author">Fernández-Galiano, Luis.</span> <a class="entry-title" href="https://drive.google.com/file/d/1sgDhI5uJhZ8mKLIfkLvXNrCCq-9_yary/view" target="_blank" rel="noopener"><em>Fire and Memory: On Architecture and Energy</em>.</a> <span class="venue">Translated by Gina Cariño. MIT Press, 2000.</span></div>
+        <div class="entry"><span class="author">Gilani, et al.</span> <a class="entry-title" href="https://drive.google.com/file/d/1On3fgm0sCAqKgOmTKx0gjz-ila081EoE/view" target="_blank" rel="noopener">"Use of Dynamic Occupant Behavior Models in the Building Design and Code Compliance Processes."</a> <span class="venue"><em>Energy and Buildings</em>, 2016.</span></div>
+        <div class="entry"><span class="author">Gonçalves, Joana Carla Soares, Mônica Dolce, Roberta C. Kronka Mulfarth, Eduardo Gasparelo Lima, and Amanda Ferreira.</span> <a class="entry-title" href="https://drive.google.com/file/d/1kxgPum-6-CAeI-B39FHeyZo0UZL4Rt2n/view" target="_blank" rel="noopener">"Revealing the Thermal Environmental Quality of the High-Density Residential Tall Building from the Brazilian Bioclimatic Modernism: The Case-Study of Copan Building."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">Gram-Hansen.</span> <a class="entry-title" href="https://drive.google.com/file/d/1QC1bRmADna6Liy8pW3YZO4NLuFpANx9M/view" target="_blank" rel="noopener">"Residential Heat Comfort Practices: Understanding Users."</a> <span class="venue"><em>Building Research &amp; Information</em>.</span></div>
+        <div class="entry"><span class="author">Gupta, and Gregg.</span> <a class="entry-title" href="https://drive.google.com/file/d/19eF1Mnk_0dBLe8Iqty2bQg5Dr4XullHQ/view" target="_blank" rel="noopener">"Assessing Energy Use and Overheating Risk in Net Zero Energy Dwellings in UK."</a> <span class="venue"><em>Energy and Buildings</em>, 2018.</span></div>
+        <div class="entry"><span class="author">Hitchings, Russell.</span> <a class="entry-title" href="https://drive.google.com/file/d/1acTALqqwACU4zJQ8_E5FglBUM-fpZY2N/view" target="_blank" rel="noopener">"Sharing Conventions: Communities of Practice and Thermal Comfort."</a> <span class="venue">Book chapter, in <em>Assembling and Governing Habits</em>.</span></div>
+        <div class="entry"><span class="author">Horn, Eva.</span> <a class="entry-title" href="https://drive.google.com/file/d/1YLjtoPh8qrKaCk6JUQMNncOTuOr823NY/view" target="_blank" rel="noopener">"Air as Medium."</a> <span class="venue"><em>Grey Room</em>.</span></div>
+        <div class="entry"><span class="author">Howe, Cymene.</span> <a class="entry-title" href="https://drive.google.com/file/d/11tZE0fgi-27yWCCz3M-VyW3ElYN7Bodn/view" target="_blank" rel="noopener"><em>Ecologics: Wind and Power in the Anthropocene</em>.</a> <span class="venue">Duke University Press, 2019.</span></div>
+        <div class="entry"><span class="author">Hudson, Andrew Dana.</span> <a class="entry-title" href="https://drive.google.com/file/d/1HgrQqaC2Z2Dd1cHk3CPAI8vgBsk8Hefj/view" target="_blank" rel="noopener"><em>Our Shared Storm: A Novel of Five Climate Futures</em>.</a> <span class="venue">2022.</span></div>
+        <div class="entry"><span class="author">Janowicz, Marianna.</span> <a class="entry-title" href="https://drive.google.com/file/d/1h8ZzbU2fiJyVtACkclt-wuYYsohk1S17/view" target="_blank" rel="noopener">"Learning from Leakiness: Washing Lines and Atmospheric Practices in Somers Town and Vanbrugh Park Estate."</a> <span class="venue">Conference paper.</span></div>
+        <div class="entry"><span class="author">Jensen, Casper Bruun.</span> <a class="entry-title" href="https://drive.google.com/file/d/1qsx9Dbv2HlNirfYnEqvCOjRHTV6tQjMU/view" target="_blank" rel="noopener">"Here Comes the Sun? Experimenting with Cambodian Energy Infrastructures."</a> <span class="venue">Book chapter.</span></div>
+        <div class="entry"><span class="author">Kim, and Kim.</span> <a class="entry-title" href="https://drive.google.com/file/d/16tNAxjiYKva2EDbwE_IFvEXbkoB42wPx/view" target="_blank" rel="noopener">"Occupants' Awareness of and Satisfaction with Green Building Technologies in a Certified Office Building."</a> <span class="venue"><em>Sustainability</em>.</span></div>
+        <div class="entry"><span class="author">Knox, Hannah.</span> <a class="entry-title" href="https://drive.google.com/file/d/1u0y7pK9UPkEKQt4KgOBE5lmITEigoiQX/view" target="_blank" rel="noopener"><em>Thinking Like a Climate: Governing a City in Times of Environmental Change</em>.</a> <span class="venue">Duke University Press.</span></div>
+        <div class="entry"><span class="author">Kuo, Jeannette.</span> <a class="entry-title" href="https://drive.google.com/file/d/1Gnqa2A51IdTqg4wqeD7CPayoURHoQYvo/view" target="_blank" rel="noopener">"Stepping Back to Make Progress."</a> <span class="venue"><em>CARTHA</em>, 2019.</span></div>
+        <div class="entry"><span class="author">Kwok, Alison G., and Nicholas B. Rajkovich.</span> <a class="entry-title" href="https://drive.google.com/file/d/1-0XbizAWji_rqG86RclRTmsgouWbZR8j/view" target="_blank" rel="noopener">"Addressing Climate Change in Comfort Standards."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">Leslie, Thomas, Saranya Panchaseelan, Shawn Barron, and Paolo Orlando.</span> <a class="entry-title" href="https://drive.google.com/file/d/1rVvhor1z67p_Jt9Onfnq9mLB9_aLUU8d/view" target="_blank" rel="noopener">"Deep Space, Thin Walls: Environmental and Material Precursors to the Postwar Skyscraper."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">Mbembe, Achille.</span> <a class="entry-title" href="https://drive.google.com/file/d/1bAE9aFbJXv0vxr8x3z5jPuFBAVNe66xq/view" target="_blank" rel="noopener"><em>Out of the Dark Night: Essays on Decolonization</em>.</a> <span class="venue">Title to confirm.</span></div>
+        <div class="entry"><span class="author">Mellick Lopes, Abby, and Stephen Healy.</span> <a class="entry-title" href="https://drive.google.com/file/d/1v7X3WzdnnMgPZOEZINPiERfyHXZKbDh-/view" target="_blank" rel="noopener">"Cultivating the Habits of Coolth."</a> <span class="venue">Book chapter, in <em>Assembling and Governing Habits</em>.</span></div>
+        <div class="entry"><span class="author">Mulfarth, Roberta C. K., Joana C. S. Gonçalves, et al.</span> <a class="entry-title" href="https://drive.google.com/file/d/1ZF98db0Jy2fD30z7OQw5RJV5TDh_UbRW/view" target="_blank" rel="noopener">"Lessons Learnt from the Brazilian Bioclimatic Modernism: The Potential of Passive Design for Offices in the City of São Paulo."</a> <span class="venue">PLEA 2020 conference paper.</span></div>
+        <div class="entry"><span class="author">Nicol, J. Fergus.</span> <a class="entry-title" href="https://drive.google.com/file/d/1nxDm-A5uqKxo-vmeKVxoftUHLRcAXqM0/view" target="_blank" rel="noopener">"Adaptive Thermal Comfort Standards in the Hot–Humid Tropics."</a> <span class="venue"><em>Energy and Buildings</em>, 2004.</span></div>
+        <div class="entry"><span class="author">Nicol, J. Fergus.</span> <a class="entry-title" href="https://drive.google.com/file/d/16-f1MqRowMQu2PouqlYq-qOHkYpphNCV/view" target="_blank" rel="noopener">"Special Issue on Thermal Comfort Standards."</a> <span class="venue"><em>Energy and Buildings</em>, editorial.</span></div>
+        <div class="entry"><span class="author">Nicol, J. Fergus, and Susan Roaf.</span> <a class="entry-title" href="https://drive.google.com/file/d/1eiNurUFpb7FBZLwbakTgE9W9CiUo5Nul/view" target="_blank" rel="noopener">"Rethinking Thermal Comfort."</a> <span class="venue"><em>Building Research &amp; Information</em>, 2017.</span></div>
+        <div class="entry"><span class="author">Nicol, J. F., and M. A. Humphreys.</span> <a class="entry-title" href="https://drive.google.com/file/d/122rc71NIme95MVaE8fgNIy_K0t30Qu6t/view" target="_blank" rel="noopener">"Adaptive Thermal Comfort and Sustainable Thermal Standards for Buildings."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">O'Brien, M. E., and Eman Abdelhadi.</span> <a class="entry-title" href="https://drive.google.com/file/d/19xVi1WB56MOpLGRAqNzXJrxRvBLVcTtt/view" target="_blank" rel="noopener"><em>Everything for Everyone: An Oral History of the Anarchist Revolution in America, 2052–2072</em>.</a> <span class="venue">Common Notions, 2022.</span></div>
+        <div class="entry"><span class="author">Schubert, Julia.</span> <a class="entry-title" href="https://drive.google.com/file/d/1PVihv6Dj9A37XN8uyM3DVALjz-sQw8sm/view" target="_blank" rel="noopener"><em>Science, Politics, and Engineering the Climate: Visions of Control</em>.</a> <span class="venue">Mattering Press.</span></div>
+        <div class="entry"><span class="author">Sherriff, et al.</span> <a class="entry-title" href="https://drive.google.com/file/d/1M0dmQ3m8ogQc1mzfhSc8JBeRPdyWsa-p/view" target="_blank" rel="noopener">"Coping with Extremes, Creating Comfort: User Experiences of 'Low-Energy' Homes in Australia."</a> <span class="venue"><em>Energy Research &amp; Social Science</em>, 2019.</span></div>
+        <div class="entry"><span class="author">Shove, Elizabeth.</span> <a class="entry-title" href="https://drive.google.com/file/d/1Ptx1yii7zl_AY2-Aem6BAbBCTgcEOWVq/view" target="_blank" rel="noopener">"Beyond the ABC: Climate Change Policy and Theories of Social Change."</a> <span class="venue"><em>Environment and Planning A</em>, 2010.</span></div>
+        <div class="entry"><span class="author">Shove, Elizabeth.</span> <a class="entry-title" href="https://drive.google.com/file/d/1sQTyG3bB7ZBM3weemAhT65nBbsGu6wIy/view" target="_blank" rel="noopener">"What Is Wrong with Energy Efficiency?"</a> <span class="venue"><em>Building Research &amp; Information</em>, 2018.</span></div>
+        <div class="entry"><span class="author">Shove, Elizabeth, and Gordon Walker.</span> <a class="entry-title" href="https://drive.google.com/file/d/19q87P8aJwwXaOZqG295mmrkXpzy5iakW/view" target="_blank" rel="noopener">"What Is Energy For? Social Practice and Energy Demand."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">Shove, Elizabeth, and Nicola Spurling.</span> <a class="entry-title" href="https://drive.google.com/file/d/1tq0-1pIOn4LKVkhJaAD91A2TkjCsQRXx/view" target="_blank" rel="noopener">"Introduction."</a> <span class="venue">In <em>Sustainable Practices: Social Theory and Climate Change</em>. Routledge, 2013.</span></div>
+        <div class="entry"><span class="author">Shove, Elizabeth, et al.</span> <a class="entry-title" href="https://drive.google.com/file/d/1dcHIwtxvtpNJoabA5g152psngZ4iLMxI/view" target="_blank" rel="noopener">"Infrastructures, Intersections and Societal Transformations."</a> <span class="venue"><em>Technological Forecasting &amp; Social Change</em>, 2018.</span></div>
+        <div class="entry"><span class="author">Shove, Elizabeth, et al.</span> <a class="entry-title" href="https://drive.google.com/file/d/1ZFazWH9lzE-DquG52a_dKsVx2wIdJDbg/view" target="_blank" rel="noopener">"Material Culture, Room Temperature and the Social Organisation of Thermal Energy."</a> <span class="venue"><em>Journal of Material Culture</em>, 2014.</span></div>
+        <div class="entry"><span class="author">Starosielski, Nicole.</span> <a class="entry-title" href="https://drive.google.com/file/d/1haNfUQiOfmrOCgrcmQ17vegaCCPtRd9w/view" target="_blank" rel="noopener"><em>Media Hot and Cold</em>.</a> <span class="venue">Duke University Press, 2021.</span></div>
+        <div class="entry"><span class="author">Wallenborn, Grégoire, and Harold Wilhite.</span> <a class="entry-title" href="https://drive.google.com/file/d/1Hxo3rbTIyt1-ixatWau7aKp-nAeboXLw/view" target="_blank" rel="noopener">"Rethinking Embodied Knowledge and Household Consumption."</a> <span class="venue">Journal article, venue to confirm.</span></div>
+        <div class="entry"><span class="author">Wu Ming.</span> <a class="entry-title" href="https://drive.google.com/file/d/1pv4CEmItPJRFXZ1GjL_lfNQ7TC8ZXybZ/view" target="_blank" rel="noopener"><em>Altai</em>.</a> <span class="venue">Translated by Shaun Whiteside.</span></div>
+        <div class="entry"><em>Unattributed.</em> <a class="entry-title" href="https://drive.google.com/file/d/1V2ogHSprHTzCRWn4PtHud2iUWCfSlf2t/view" target="_blank" rel="noopener">"Keeping Your Cool: Does 'Tropical Modernist' Architecture Work, Climatically?"</a> <span class="venue">Author/venue to confirm.</span></div>
+        <div class="entry"><em>Unattributed.</em> <a class="entry-title" href="https://drive.google.com/file/d/1HhPIUSz265bNfMcIpa0wpBOK0lIoC6YE/view" target="_blank" rel="noopener">"Open the Window?"</a> <span class="venue">Journal editorial, authors/venue to confirm.</span></div>
+        <div class="entry"><em>Guest-edited by Gutierrez+Portefaix.</em> <a class="entry-title" href="https://drive.google.com/file/d/1sbwRcFcBrtWPDB8dyAZKRJg48ytLfsXJ/view" target="_blank" rel="noopener"><em>Urban China</em>, no. 5: "Thermal Space" (Hong Kong).</a> <span class="venue">2005.</span></div>
+
+        <div class="type-label">Topical</div>
+        <div class="entry"><a class="entry-title" href="https://drive.google.com/file/d/1D9ogfWuLd8ObzXFYicNWa-zD4pLCBpIz/view" target="_blank" rel="noopener"><em>Roadmap 2050: A Practical Guide to a Prosperous, Low-Carbon Europe</em>.</a> <span class="venue">European Climate Foundation, 2010.</span></div>
+        <div class="entry"><a class="entry-title" href="https://drive.google.com/file/d/1mzFRe_-xkGtx8-3kBPF1CbVdor4uUMXN/view" target="_blank" rel="noopener">"Towards a Max Planck Institute for Geoanthropology."</a> <span class="venue">White paper, draft, 2021.</span></div>
+
+        <div class="type-label">Press</div>
+        <div class="entry"><a class="entry-title" href="https://drive.google.com/file/d/1iCdvYXIadEBEHxOU_A6bhwDQy5mJN0i3/view" target="_blank" rel="noopener">"Surviving the Phoenix Heat."</a> <span class="venue"><em>The New Yorker</em>, News Desk. Author to confirm.</span></div>
+        <div class="entry"><a class="entry-title" href="https://drive.google.com/file/d/12L6_f24Lp8ICY3QuVk6pdoADIAPljEl0/view" target="_blank" rel="noopener">"In Defense of Degrowth."</a> <span class="venue"><em>Harvard Business Review</em>, 2024.</span></div>
+        <div class="entry"><a class="entry-title" href="https://drive.google.com/file/d/1XgcYsCP8cssE9N_NkXYU1rpbgRPQcf9G/view" target="_blank" rel="noopener">"IPCC's Conservative Nature Masks True Scale of Action Needed to Avert Catastrophic Climate Change."</a> <span class="venue"><em>The Conversation</em>. Author to confirm.</span></div>
+        <div class="entry"><span class="author">Jovanovic Weiss, Srdjan.</span> <a class="entry-title" href="https://drive.google.com/file/d/11VZLpRqQfurbCXy7QsaF5NXY65ufR0yf/view" target="_blank" rel="noopener">"Better than Weather."</a> <span class="venue"><em>Cabinet</em>, no. 3, 2001.</span></div>
+
+        <div class="type-label">Blogs</div>
+        <div class="entry"><a class="entry-title" href="https://drive.google.com/file/d/1LbZuYkMgwiK1FeVtq2-Z3O2YcGRdMxMK/view" target="_blank" rel="noopener">"The Trouble With 'Market-Based' Climate Solutions."</a> <span class="venue"><em>Drilled</em>.</span></div>
+      </section>
+
+    </main>
+
+    <aside class="image-col">
+      <figure>
+        <div class="cover-placeholder">Cover 1</div>
+        <figcaption>Add an image + link here</figcaption>
+      </figure>
+      <figure>
+        <div class="cover-placeholder">Cover 2</div>
+        <figcaption>Add an image + link here</figcaption>
+      </figure>
+      <figure>
+        <div class="cover-placeholder">Cover 3</div>
+        <figcaption>Add an image + link here</figcaption>
+      </figure>
+    </aside>
+  </div>
+
+  <p class="no-results" id="no-results">No entries match your search.</p>
+
+  <footer>© 2026 Daniel A. Barber. Built as a static site.</footer>
+
+  <script>
+    const searchInput = document.getElementById('bib-search');
+    const noResults = document.getElementById('no-results');
+    const sections = document.querySelectorAll('main section');
+
+    function norm(str) { return str.toLowerCase(); }
+
+    searchInput.addEventListener('input', () => {
+      const q = norm(searchInput.value.trim());
+      let anyVisible = false;
+
+      sections.forEach(section => {
+        let sectionHasVisible = false;
+        let currentLabel = null;
+        let labelHasVisible = false;
+
+        Array.from(section.children).forEach(el => {
+          if (el.tagName === 'H2') return;
+          if (el.classList.contains('type-label')) {
+            if (currentLabel) currentLabel.style.display = labelHasVisible ? '' : 'none';
+            currentLabel = el;
+            labelHasVisible = false;
+          } else if (el.classList.contains('entry')) {
+            const match = q === '' || norm(el.textContent).includes(q);
+            el.style.display = match ? '' : 'none';
+            if (match) { labelHasVisible = true; sectionHasVisible = true; }
+          }
+        });
+        if (currentLabel) currentLabel.style.display = labelHasVisible ? '' : 'none';
+
+        const h2 = section.querySelector('h2');
+        if (h2) h2.style.display = (q === '' || sectionHasVisible) ? '' : 'none';
+        section.style.borderBottom = (q !== '' && !sectionHasVisible) ? 'none' : '';
+        if (sectionHasVisible) anyVisible = true;
+      });
+
+      noResults.style.display = (q !== '' && !anyVisible) ? '' : 'none';
+    });
+  </script>
+
+</body>
+</html>
